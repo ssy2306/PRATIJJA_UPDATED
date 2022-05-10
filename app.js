@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "views")));
 app.use(express.static('assets'));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.get('/',async (req,res)=>{
-  res.render("index")
+  res.send("Under Maintainance")
 })
 app.get('/about',async(req,res)=>{
     res.render("about")
