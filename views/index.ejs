@@ -32,25 +32,152 @@
 
   <!-- Template Main CSS File -->
   <link href="../css/style.css" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
+    <div class=" d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <a href="/"><img src="img/logo 2 copy.png" class="logo" style="padding: 0 !important;margin: 0 !important; width: 16%;"></a>
+        <a href="/"><img src="img/logo 2 copy.png" class="logo"
+            style="padding: 0 !important; width: 16%;margin-left: 10% !important;"></a>
+        
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
-      <nav id="navbar" class="navbar">
-        <ul>
+      <nav  >
+        <style scoped>
+          .wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+ /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);*/
+  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+  background: rgb(0, 0, 0);
+
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .wrapper{
+  clip-path: circle(75%);
+}
+.menu-btn{
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  /* left: 20px; */
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.635);
+  cursor: pointer;
+  /*background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+ /* background: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%); */
+  background: #FEFCE8;
+  transition: all 0.3s ease-in-out;
+}
+#active:checked ~ .menu-btn{
+  color: rgba(0, 0, 0, 0.635);;
+}
+#active:checked ~ .menu-btn i:before{
+  content: "\f00d";
+}
+.wrapper ul{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  border-radius: 50px;
+  background: #000;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+   background: linear-gradient(#14ffe9, #3bfff8, #00ffd0);
+  /*background: linear-gradient(375deg, #1cc7d0, #2ede98);*/
+  width: 104%;
+  height: 110%;
+  left: -2%;
+  top: -5%; /* if the font is 'Oswald'*/
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  animation: rotate 1.5s linear infinite;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #fff;
+}
+input[type="checkbox"]{
+  display: none;
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  text-align: center;
+  width: 100%;
+  color: #202020;
+}
+.content .title{
+  font-size: 40px;
+  font-weight: 700;
+}
+.content p{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+@keyframes rotate {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+        </style>
+
+        <!-- <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="/rules">Rules</a></li>
-          <li><a class="nav-link scrollto" href="/about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="/about">About Us</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
@@ -71,50 +198,235 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="/register">Register Now!</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a href="/register" style="background: none;
+	 border: 1px solid;
+	 font: inherit;
+	 line-height: 1;
+	 margin: 1em 2em;
+	 padding: 0.4em 1em; color: #79f2f9;
+	 font: inherit;--color: #81ffff;
+	 --hover: #21f0ff; color: var(--color); 
+	 transition: 0.25s;" class="pulse  scrollto">
+              <style scoped>
+                .fill:hover,
+                .fill:focus {
+                  box-shadow: inset 0 0 0 2em var(--hover);
+                }
+
+                .pulse:hover,
+                .pulse:focus {
+                  animation: pulse 1s;
+                  box-shadow: 0 0 0 2em transparent;
+                }
+
+                @keyframes pulse {
+                  0% {
+                    box-shadow: 0 0 0 0 var(--hover);
+                  }
+                }
+
+                .close:hover,
+                .close:focus {
+                  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+                }
+
+                .raise:hover,
+                .raise:focus {
+                  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+                  transform: translateY(-0.25em);
+                }
+
+                .up:hover,
+                .up:focus {
+                  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+                }
+
+                .slide:hover,
+                .slide:focus {
+                  box-shadow: inset 6.5em 0 0 0 var(--hover);
+                }
+
+                .offset {
+                  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+                }
+
+                .offset:hover,
+                .offset:focus {
+                  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+                }
+                
+
+                button {
+                  color: var(--color);
+                  transition: 0.25s;
+                }
+
+                button:hover,
+                button:focus {
+                  border-color: var(--hover);
+                  color: #fff;
+                }
+              </style>
+              Register Now !
+            </a></li>
         </ul>
-        <i class="bi bi-list mobile-nav-toggle text-light"></i>
+        <i class="bi bi-list mobile-nav-toggle text-light"></i> -->
+        <input type="checkbox" id="active"  >
+    <label for="active" class="menu-btn" ><i class="fas fa-bars"></i></label>
+    <div class="wrapper"  >
+      <ul>
+<li><a href="/">Home</a></li>
+<li><a href="/rules">Rules</a></li>
+<li><a href="/about">About</a></li>
+<li><a href="https://pratijja.org#contact">Contact</a></li>
+<li><a href="/register" >Register</a></li>
+</ul>
+</div>
       </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center apnacolor">
+  <section id="hero" class="d-flex align-items-center apnacolor" style="margin-top: 3.8% !important;">
 
     <div class="container  batra">
       <div class="row gy-4">
-        <div  class="col-lg-6  order-2 order-lg-1 d-flex flex-column justify-content-center text-light">
-           <center>
-          <h1 class="text-light" style="color: #EDE6DB !important;">Asian Parliamentary Debate</h1>
-          <h3 class="text-light" style="color: #EDE6DB !important;">Stand, Speak, Conquer.</h3>
-          <!-- <h2 class="text-light "><i>"It is better to debate a question without settling it, than to settle a question
+        <div class="col-lg-6  order-2 order-lg-1 d-flex flex-column justify-content-center text-light">
+          <center>
+            <h1 class="text-light" style="color: #EDE6DB !important;">Asian Parliamentary Debate</h1>
+            <h3 class="text-light" style="color: #EDE6DB !important;">Stand, Speak, Conquer.</h3>
+            <!-- <h2 class="text-light "><i>"It is better to debate a question without settling it, than to settle a question
               without debating it"</i></h2> -->
-            
-           <div class="col-sm-12 row" ><img src="../img/Prize.png" alt="" height="300px" width="900px"></div>
-            <a href="/register" style="background-color: #EDE6DB !important;color: black;" class="btn-get-started scrollto regbtn">Register Now !</a>
+
+            <div class="col-sm-12 row"><img src="../img/prize money.svg" alt="" height="300px" width="990px"></div>
+            <a href="/register" class="padRegis" style="background: none;
+	 border: 2px solid;
+	 font: inherit;
+	 line-height: 1;
+	 margin: 0.5em;
+	 padding: 1em 8em; color: #79f2f9;
+	 font: inherit;--color: #81ffff;
+	 --hover: #21f0ff; color: var(--color);
+	 transition: 0.25s;" class="pulse">
+              <style scoped>
+                .fill:hover,
+                .fill:focus {
+                  box-shadow: inset 0 0 0 2em var(--hover);
+                }
+
+                .pulse:hover,
+                .pulse:focus {
+                  animation: pulse 1s;
+                  box-shadow: 0 0 0 2em transparent;
+                }
+
+                @keyframes pulse {
+                  0% {
+                    box-shadow: 0 0 0 0 var(--hover);
+                  }
+                }
+
+                .close:hover,
+                .close:focus {
+                  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+                }
+
+                .raise:hover,
+                .raise:focus {
+                  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+                  transform: translateY(-0.25em);
+                }
+
+                .up:hover,
+                .up:focus {
+                  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+                }
+
+                .slide:hover,
+                .slide:focus {
+                  box-shadow: inset 6.5em 0 0 0 var(--hover);
+                }
+
+                .offset {
+                  box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+                }
+
+                .offset:hover,
+                .offset:focus {
+                  box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+                }
+
+                .fill {
+                  --color: #a972cb;
+                  --hover: #cb72aa;
+                }
+
+                .pulse {
+                  --color: #ef6eae;
+                  --hover: #ef8f6e;
+                }
+
+                .close {
+                  --color: #ff7f82;
+                  --hover: #ffdc7f;
+                }
+
+                .raise {
+                  --color: #ffa260;
+                  --hover: #e5ff60;
+                }
+
+                .up {
+                  --color: #e4cb58;
+                  --hover: #94e458;
+                }
+
+                .slide {
+                  --color: #8fc866;
+                  --hover: #66c887;
+                }
+
+                .offset {
+                  --color: #19bc8b;
+                  --hover: #1973bc;
+                }
+
+                button {
+                  color: var(--color);
+                  transition: 0.25s;
+                }
+
+                button:hover,
+                button:focus {
+                  border-color: var(--hover);
+                  color: #fff;
+                }
+              </style>
+              Register Now !
+            </a>
           </center>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="./img/Artboard 1.png" class="img-fluid animated" alt="" >
+          <img src="./img/Artboard 1.png" class="img-fluid animated" alt="">
         </div>
       </div>
     </div>
 
   </section><!-- End Hero -->
 
-        
-        
-     
-   
+
+
+
+
   </section>
 
   <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="timer" class="about text-light" style="padding-bottom: 2% !important; margin-top: 3% !important;" >
-      
+    <section id="timer" class="about text-light" style="padding-bottom: 2% !important; margin-top: 3% !important;">
+
       <!-- <div class="container" style="margin-top: 6.9% !important;">
 
         <div class="row justify-content-between debateimg">
@@ -122,40 +434,41 @@
             <img src="/img/data poster 2.png.png" class="img-fluid img-fluid1" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-5 pt-5 pt-lg-0 datetime" style="margin-top: 8% !important;"> -->
-            <!-- <h3 data-aos="fade-up" class="text-light ">Voluptatem dignissimos provident quasi</h3>
+      <!-- <h3 data-aos="fade-up" class="text-light ">Voluptatem dignissimos provident quasi</h3>
             <p data-aos="fade-up" data-aos-delay="100" class="text-light ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua. Duis aute irure dolor in reprehenderit
             </p> -->
-             <div class="row" style="box-sizing:border-box;">
-              <div style="justify-content: center !important;text-align: right ;" class="col-md-6 col-sm-6 DOE" data-aos="fade-up" data-aos-delay="100" class="text-light "> 
-    
-                 <i class="bx bx-calendar text-light"></i> 
+      <div class="row" style="box-sizing:border-box;">
+        <div style="justify-content: center !important;text-align: right ;" class="col-md-6 col-sm-6 DOE"
+          data-aos="fade-up" data-aos-delay="100" class="text-light ">
 
-                <h4 class="text-light ">Date</h4>
-                <p class="text-light ">June 3rd, 4th and 5th,<br>2022</p>
-              </div>
-              <div class="col-md-6 col-sm-6 VOE" data-aos="fade-up" data-aos-delay="200" class="text-light ">
-                <i class="bx bx-map text-light"></i>
-                <h4 class="text-light ">Venue</h4>
-                <p class="text-light ">Online</p>
-              </div>
-            </div>
-          </div>
+          <i class="bx bx-calendar text-light"></i>
+
+          <h4 class="text-light ">Date</h4>
+          <p class="text-light ">June 3rd, 4th and 5th,<br>2022</p>
         </div>
+        <div class="col-md-6 col-sm-6 VOE" data-aos="fade-up" data-aos-delay="200" class="text-light ">
+          <i class="bx bx-map text-light"></i>
+          <h4 class="text-light ">Venue</h4>
+          <p class="text-light ">Online</p>
+        </div>
+      </div>
+      </div>
+      </div>
 
       </div>
       <div class="container">
-  <!-- <h1 id="headline">Countdown to my birthday</h1> -->
-  <div id="countdown">
-    <ul>
-      <li><span id="days"></span>days</li>
-      <li><span id="hours"></span>Hours</li>
-      <li><span id="minutes"></span>Minutes</li>
-      <li><span id="seconds"></span>Seconds</li>
-    </ul>
-  </div>
-</div>
+        <!-- <h1 id="headline">Countdown to my birthday</h1> -->
+        <div id="countdown">
+          <ul>
+            <li><span id="days"></span>days</li>
+            <li><span id="hours"></span>Hours</li>
+            <li><span id="minutes"></span>Minutes</li>
+            <li><span id="seconds"></span>Seconds</li>
+          </ul>
+        </div>
+      </div>
     </section><!-- End About Section -->
 
     <!-- ======= Services Section ======= -->
@@ -198,7 +511,7 @@
             </a>
           </div>
           < <div class="col-md-6 col-lg-2 d-flex align-items-stretch"></div> -->
-          <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+    <!-- <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <a href="/invsub">
               <div class="icon-box">
                 <div class="icon"><i class="bx bx-file"></i></div>
@@ -227,8 +540,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -242,8 +555,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/2.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -257,8 +570,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/3.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -272,8 +585,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/4.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -287,8 +600,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/5.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -302,8 +615,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/6.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -317,8 +630,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/7.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -332,8 +645,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/8.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -347,8 +660,8 @@
             <div class="portfolio-wrap">
               <img src="img/webteam/9.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="img/webteam/9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  ><i class="bi bi-plus"></i></a>
+                <a href="img/webteam/9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"><i
+                    class="bi bi-plus"></i></a>
                 <!-- <a href="portfolio-details.html" title="More Details"><i class="bi bi-link"></i></a> -->
               </div>
               <!-- <div class="portfolio-info">
@@ -387,7 +700,8 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>Kalinga Institute of Industrial Technology,<br> Chandaka Industrial Estate,<br> Patia, Bhubaneswar,<br> Odisha 751024<br><br></p>
+                <p>Kalinga Institute of Industrial Technology,<br> Chandaka Industrial Estate,<br> Patia,
+                  Bhubaneswar,<br> Odisha 751024<br><br></p>
               </div>
 
               <div class="email">
@@ -460,9 +774,10 @@
           <div class="col-lg-4 col-md-6 footer-contact text-light">
             <h3 class="text-light">KSAC</h3>
             <p class="text-light">
-              Kalinga Institute of Industrial Technology,<br> Chandaka Industrial Estate,<br> Patia, Bhubaneswar,<br> Odisha 751024<br><br>
-              <strong class="text-light phone" >Phone:</strong> +91 7735709660<br>
-              <strong class="text-light">Email:</strong>  kronicleofficial@gmail.com<br>
+              Kalinga Institute of Industrial Technology,<br> Chandaka Industrial Estate,<br> Patia, Bhubaneswar,<br>
+              Odisha 751024<br><br>
+              <strong class="text-light phone">Phone:</strong> +91 7735709660<br>
+              <strong class="text-light">Email:</strong> kronicleofficial@gmail.com<br>
             </p>
           </div>
 
@@ -474,7 +789,7 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li> -->
-              <img class="img-fluid img-last" src="img/logo 2 copy.png" height="30%" alt="">
+            <img class="img-fluid img-last" src="img/logo 2 copy.png" height="30%" alt="">
             </ul>
           </div>
 
@@ -492,12 +807,14 @@
           <div class="col-lg-2 col-md-6 footer-links ">
             <h4 class="text-light">Our Social Networks</h4>
             <!-- <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
-            
+
             <div class="social-links mt-3">
               <!-- <a href="" class="mail-send" ><i class="bx bxl-mail-send"></i></a> -->
-              <a href="mailto:kronicleofficial@gmail.com" style="margin-left:7% !important;"><i class="fa-solid fa-envelope" ></i></a>
+              <a href="mailto:kronicleofficial@gmail.com" style="margin-left:7% !important;"><i
+                  class="fa-solid fa-envelope"></i></a>
               <a href="https://www.facebook.com/kroniclekiit" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://www.instagram.com/kronicle_official/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.instagram.com/kronicle_official/" class="instagram"><i
+                  class="bx bxl-instagram"></i></a>
               <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
               <!-- <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
             </div>
@@ -531,49 +848,49 @@
   <script src="/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <script>
-   (function () {
-  const second = 1000,
+    (function () {
+      const second = 1000,
         minute = second * 60,
         hour = minute * 60,
         day = hour * 24;
 
-  //I'm adding this section so I don't have to keep updating this pen every year :-)
-  //remove this if you don't need it
-  let today = new Date(),
-      dd = String(today.getDate()).padStart(2, "0"),
-      mm = String(today.getMonth() + 1).padStart(2, "0"),
-      yyyy = today.getFullYear(),
-      nextYear = yyyy + 1,
-      dayMonth = "06/03/",
-      birthday = dayMonth + yyyy;
-  
-  today = mm + "/" + dd + "/" + yyyy;
-  if (today > birthday) {
-    birthday = dayMonth + nextYear;
-  }
-  //end
-  
-  const countDown = new Date(birthday).getTime(),
-      x = setInterval(function() {    
+      //I'm adding this section so I don't have to keep updating this pen every year :-)
+      //remove this if you don't need it
+      let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+        nextYear = yyyy + 1,
+        dayMonth = "06/03/",
+        birthday = dayMonth + yyyy;
 
-        const now = new Date().getTime(),
-              distance = countDown - now;
+      today = mm + "/" + dd + "/" + yyyy;
+      if (today > birthday) {
+        birthday = dayMonth + nextYear;
+      }
+      //end
 
-        document.getElementById("days").innerText = Math.floor(distance / (day)),
-          document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-          document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-          document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+      const countDown = new Date(birthday).getTime(),
+        x = setInterval(function () {
 
-        //do something later when date is reached
-        if (distance < 0) {
-          document.getElementById("headline").innerText = "It's my birthday!";
-          document.getElementById("countdown").style.display = "none";
-          document.getElementById("content").style.display = "block";
-          clearInterval(x);
-        }
-        //seconds
-      }, 0)
-  }());
+          const now = new Date().getTime(),
+            distance = countDown - now;
+
+          document.getElementById("days").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+          //do something later when date is reached
+          if (distance < 0) {
+            document.getElementById("headline").innerText = "It's my birthday!";
+            document.getElementById("countdown").style.display = "none";
+            document.getElementById("content").style.display = "block";
+            clearInterval(x);
+          }
+          //seconds
+        }, 0)
+    }());
   </script>
   <!-- <script src="/vendor/php-email-form/validate.js"></script> -->
 
