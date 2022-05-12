@@ -1364,6 +1364,11 @@ background: radial-gradient(circle, rgba(17,42,85,1) 0%, rgba(19,30,49,1) 100%);
     padding: 3px 0;
     /* display: none; */
   }
+
+
+  .batra{
+    margin-top: -25% !important;
+  }
   /* .bi-arrow-up-short::before{
     display: none;
   } */
