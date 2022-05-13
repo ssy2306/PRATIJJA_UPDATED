@@ -366,7 +366,7 @@ background: radial-gradient(circle, rgba(34,97,153,1) 0%, rgba(18,70,115,1) 100%
     width: 80%;
   }
   #hero{
-    height: 115vh;
+    height: 112vh;
   }
 }
 @media (max-height: 600px) {
