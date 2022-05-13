@@ -368,6 +368,10 @@ background: radial-gradient(circle, rgba(34,97,153,1) 0%, rgba(18,70,115,1) 100%
   #hero{
     height: 112vh;
   }
+  .prizeMoneyImg{
+    width: 93% !important;
+    margin-left: 3% !important;
+  }
 }
 @media (max-height: 600px) {
   #hero {
