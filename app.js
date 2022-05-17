@@ -26,6 +26,9 @@ app.get('/rules',async(req,res)=>{
 app.get('/about',async(req,res)=>{
     res.render("about")
 })
+app.get('/process',async(req,res)=>{
+    res.render("process")
+})
 
 app.get('/instreg', async(req,res)=>{
     res.render("InstReg")
